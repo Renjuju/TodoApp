@@ -10,12 +10,24 @@ import UIKit
 
 class TextViewController: UIViewController {
 
+    @IBOutlet weak var editButtonOutlet: UIButton!
+    @IBOutlet weak var textLabelOutlet: UITextField!
+    
+    var row: Int = 0
+    
+    @IBAction func sumbitAction(_ sender: UIButton) {
+        if(textLabelOutlet.text != "") {
+            delegate?.editTask(row: 0, text: textLabelOutlet.text ?? "")
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
 
-
+    var delegate: Tasks?
     /*
     // MARK: - Navigation
 

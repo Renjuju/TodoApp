@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddTask {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Tasks {
+    
     @IBOutlet weak var tableView: UITableView!
     var tasks: [Task] = []
 
@@ -21,10 +22,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        _ = storyboard.instantiateViewController(withIdentifier: "todoTextView")
-        self.navigationController?.performSegue(withIdentifier: "textSegue", sender: indexPath)
-//        self.navigationController?.pushViewController(destination, animated: true)
+//        self.navigationController?.performSegue(withIdentifier: "textSegue", sender: indexPath)
+        self.performSegue(withIdentifier: "textSegue", sender: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -41,8 +40,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let viewController  = segue.destination as! AddTaskController
-        viewController.delegate = self
+        if(segue.identifier == "textSegue") {
+            let foobar = segue.destination as! TextViewController
+            foobar.delegate = self
+            foobar.row = (sender as! Int)
+        } else {
+            let viewController = segue.destination as! AddTaskController
+            viewController.delegate = self
+        }
     }
     
     func addTask(name: String) {
@@ -52,6 +57,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func deleteTask(index: Int) {
         tasks.remove(at: index)
+    }
+    
+    func editTask(row: Int, text: String) {
+        print("Got the row \(row)")
+        tasks[row] = Task(name: text)
+        print(tasks)
+        tableView.reloadData()
     }
 }
 

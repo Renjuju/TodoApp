@@ -8,8 +8,9 @@
 
 import UIKit
 
-protocol AddTask {
+protocol Tasks {
     func addTask(name: String)
+    func editTask(row: Int, text: String)
 }
 
 class AddTaskController: UIViewController {
@@ -23,7 +24,7 @@ class AddTaskController: UIViewController {
         }
     }
     
-    var delegate: AddTask?
+    var delegate: Tasks?
     
     override func viewDidLoad() {
         super.viewDidLoad()
