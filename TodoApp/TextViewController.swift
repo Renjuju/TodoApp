@@ -17,7 +17,7 @@ class TextViewController: UIViewController {
     
     @IBAction func sumbitAction(_ sender: UIButton) {
         if(textLabelOutlet.text != "") {
-            delegate?.editTask(row: 0, text: textLabelOutlet.text ?? "")
+            delegate?.editTask(row: row, text: textLabelOutlet.text ?? "")
         }
         navigationController?.popViewController(animated: true)
     }
