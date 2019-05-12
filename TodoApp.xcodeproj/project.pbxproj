@@ -16,6 +16,7 @@
 		604B6EA8228730A400E18440 /* TodoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604B6EA7228730A400E18440 /* TodoAppUITests.swift */; };
 		604B6EB62287358000E18440 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604B6EB52287358000E18440 /* TaskCell.swift */; };
 		604B6EB82287566900E18440 /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604B6EB72287566900E18440 /* AddTaskController.swift */; };
+		604B6EBC2287873600E18440 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604B6EBB2287873600E18440 /* TextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		604B6EA9228730A400E18440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		604B6EB52287358000E18440 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		604B6EB72287566900E18440 /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
+		604B6EBB2287873600E18440 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				604B6E90228730A400E18440 /* LaunchScreen.storyboard */,
 				604B6E93228730A400E18440 /* Info.plist */,
 				604B6EB72287566900E18440 /* AddTaskController.swift */,
+				604B6EBB2287873600E18440 /* TextViewController.swift */,
 			);
 			path = TodoApp;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				604B6EBC2287873600E18440 /* TextViewController.swift in Sources */,
 				604B6E8A228730A200E18440 /* ViewController.swift in Sources */,
 				604B6EB62287358000E18440 /* TaskCell.swift in Sources */,
 				604B6EB82287566900E18440 /* AddTaskController.swift in Sources */,

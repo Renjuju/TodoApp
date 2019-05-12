@@ -19,7 +19,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        _ = storyboard.instantiateViewController(withIdentifier: "todoTextView")
+        self.navigationController?.performSegue(withIdentifier: "textSegue", sender: indexPath)
+//        self.navigationController?.pushViewController(destination, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == .delete) {
             deleteTask(index: indexPath.row)
